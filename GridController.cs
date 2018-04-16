@@ -34,10 +34,15 @@ namespace GridHookAPI.Controllers
         // GET api/<controller>
         public HttpResponseMessage Get()
         {
-            string jsonString = lastEvent != null ? JsonConvert.SerializeObject(lastEvent) : "nothing";
+            string jsonString = lastEvent != null ? JsonConvert.SerializeObject(lastEvent) : "{\"Event\":\"Empty\"}";
             var response = Request.CreateResponse(HttpStatusCode.OK);
             response.Content = new StringContent(jsonString, Encoding.UTF8, "application/json");
             return response;
+        }
+
+        public void Delete()
+        {
+            lastEvent = null;
         }
     }
 }
