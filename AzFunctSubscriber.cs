@@ -1,3 +1,6 @@
+//You need to add the eventgrid package reference to your function.
+//create or update the project.json file of your Azure Function with the content of project.json file in this repo
+
 using System.Net;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
